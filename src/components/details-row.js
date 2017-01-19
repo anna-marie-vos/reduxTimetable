@@ -15,7 +15,6 @@ module.exports = function (props) {
       </td>
       <td> Teacher: {details.teacher}
       </td>
-
     </tr>
   )
 }

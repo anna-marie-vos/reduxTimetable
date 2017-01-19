@@ -29,18 +29,21 @@ module.exports = function App (props) {
             <tr>
               <td>first</td>
                 {timetable.map((tableCells)=>
-                <TimeTableRow tableCells = {tableCells} store = {store}/>)}
+                <TimeTableRow tableCells = {tableCells}
+                periodKey={1} store = {store}/>)}
             </tr>
             <DetailsRow details = {details} store = {store}/>
             <tr>
               <td>second</td>
-                {timetable.map((tableCells)=>
-                <TimeTableRow tableCells = {tableCells} store = {store}/>)}
+                {timetable.map((tableCells,index)=>
+                  <TimeTableRow tableCells = {tableCells}
+                  periodKey={2} store = {store} index ={index}/>)}
             </tr>
             <tr>
               <td>third</td>
                 {timetable.map((tableCells)=>
-                <TimeTableRow tableCells = {tableCells} store = {store}/>)}
+                  <TimeTableRow tableCells = {tableCells}
+                  periodKey={3} store = {store}/>)}
             </tr>
             <tr>
               <td>Lunch</td>
@@ -48,12 +51,14 @@ module.exports = function App (props) {
             <tr>
               <td>fourth</td>
                 {timetable.map((tableCells)=>
-                <TimeTableRow tableCells = {tableCells} store = {store}/>)}
+                  <TimeTableRow tableCells = {tableCells}
+                  periodKey={4} store = {store}/>)}
             </tr>
             <tr>
               <td>fifth</td>
                 {timetable.map((tableCells)=>
-                <TimeTableRow tableCells = {tableCells} store = {store}/>)}
+                  <TimeTableRow tableCells = {tableCells}
+                  periodKey={5} store = {store}/>)}
             </tr>
 
           </tbody>
