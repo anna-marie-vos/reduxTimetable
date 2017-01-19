@@ -1,5 +1,6 @@
 exports.up = function(knex, Promise) {
   return knex.schema.createTableIfNotExists('timetable', function (table) {
+    table.increments();
     table.string('day');
     table.string('period');
     table.string('subject');
