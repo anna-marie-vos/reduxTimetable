@@ -3,7 +3,7 @@ const _ = require('lodash')
 
 //components
 const ProductRow = require('./product-row')
-const TimeTableRow = require('./time-table-cell')
+const TimeTableRow = require('./time-table-row')
 
 module.exports = function App (props) {
   console.log('src/app.js props', props)
