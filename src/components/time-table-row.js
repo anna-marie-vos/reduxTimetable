@@ -1,18 +1,21 @@
 const React = require('react')
 
 module.exports = function (props) {
-  console.log('time-table-cell.js', props );
+  // console.log('time-table-cell.js', props );
   const { tableCells, store } = props
-  const { period, subject, details, classroom, teacher } = tableCells
-  console.log('time-table-cell.js period: ', teacher);
+  const { period, subject, details, classroom, teacher, id } = tableCells
+  // console.log('time-table-cell.js period: ', teacher);
 
   return (
 
-    <td><button>{subject}</button></td>
+    <td>
+      <button onClick={() => store.dispatch(displayDetails(id))}>
+        {subject}
+      </button>
+    </td>
   )
 }
 
-//
-// function removeFromCart (productId) {
-//   return {type: 'REMOVE_FROM_CART', payload: productId}
-// }
+function displayDetails (id) {
+  return {type: 'DISPLAY_DETAILS', payload: id}
+}

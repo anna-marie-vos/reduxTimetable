@@ -2,13 +2,13 @@ const React = require('react')
 const _ = require('lodash')
 
 //components
-const ProductRow = require('./product-row')
+const DetailsRow = require('./details-row')
 const TimeTableRow = require('./time-table-row')
 
 module.exports = function App (props) {
   console.log('src/app.js props', props)
   const { store, state } = props
-  const { timetable } = state
+  const { timetable, details, periodKey, dayKey } = state
   console.log('src/app.js timetable', timetable)
 
   return (
@@ -31,6 +31,7 @@ module.exports = function App (props) {
                 {timetable.map((tableCells)=>
                 <TimeTableRow tableCells = {tableCells} store = {store}/>)}
             </tr>
+            <DetailsRow details = {details} store = {store}/>
             <tr>
               <td>second</td>
                 {timetable.map((tableCells)=>
@@ -54,11 +55,7 @@ module.exports = function App (props) {
                 {timetable.map((tableCells)=>
                 <TimeTableRow tableCells = {tableCells} store = {store}/>)}
             </tr>
-            <tr>
-              <td>sixth</td>
-                {timetable.map((tableCells)=>
-                <TimeTableRow tableCells = {tableCells} store = {store}/>)}
-            </tr>
+
           </tbody>
         </table>
 
