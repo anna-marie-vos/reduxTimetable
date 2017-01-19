@@ -9,18 +9,17 @@ const App = require('./components/app')
 
 
 const initialState = {
-  products: {
-    1: {
-      id: 1,
-      name: 'banana',
-      stock: 2,
-      price:2,
-      quantity: 0,
-      subtotal: 0,
-    }
-  },
-
-  total: 0
+  timetable: [
+    {id: 1, day: "monday", period: 2,
+      subject: 'history', details:'history of the hobbit',
+      classroom:'102',teacher:'Jim Beam'},
+    {id: 2, day: "tuesday", period: 3,
+      subject: 'maths', details:'algebra',
+      classroom:'103',teacher:'professor plum'},
+    {id: 3, day: "Wednesday", period: 1,
+      subject: 'home room', details:'mindfulness',
+      classroom:'101',teacher:'captain jack'}
+  ]
 }
 
 const store = createStore(reducer, initialState)
