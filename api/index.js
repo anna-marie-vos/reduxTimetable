@@ -1,7 +1,5 @@
-const timetableRoute = require('./a-resource')
+const timetableRoute = require('./timetableRoute')
 
 module.exports = {
   timetableRoute
 }
-
-

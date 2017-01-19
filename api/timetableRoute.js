@@ -2,7 +2,7 @@ const express = require("express");
 const route = express.Router();
 
 module.exports = function(db) {
-  // GET api/v1/cats/
+  // GET api/v1/timetable/
   route.get("/", get);
   route.post("/", post);
 
