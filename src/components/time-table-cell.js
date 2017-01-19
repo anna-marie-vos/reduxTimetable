@@ -7,7 +7,7 @@ module.exports = function (props) {
   console.log('time-table-cell.js period: ', teacher);
 
   return (
-    
+
     <td><button>{subject}</button></td>
   )
 }

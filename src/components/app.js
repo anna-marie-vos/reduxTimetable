@@ -26,9 +26,39 @@ module.exports = function App (props) {
             </tr>
           </thead>
           <tbody>
-          <td>1st</td>             
-          {timetable.map((tableCells)=>
-            <TimeTableRow tableCells = {tableCells} store = {store}/>)}
+            <tr>
+              <td>first</td>
+                {timetable.map((tableCells)=>
+                <TimeTableRow tableCells = {tableCells} store = {store}/>)}
+            </tr>
+            <tr>
+              <td>second</td>
+                {timetable.map((tableCells)=>
+                <TimeTableRow tableCells = {tableCells} store = {store}/>)}
+            </tr>
+            <tr>
+              <td>third</td>
+                {timetable.map((tableCells)=>
+                <TimeTableRow tableCells = {tableCells} store = {store}/>)}
+            </tr>
+            <tr>
+              <td>Lunch</td>
+            </tr>
+            <tr>
+              <td>fourth</td>
+                {timetable.map((tableCells)=>
+                <TimeTableRow tableCells = {tableCells} store = {store}/>)}
+            </tr>
+            <tr>
+              <td>fifth</td>
+                {timetable.map((tableCells)=>
+                <TimeTableRow tableCells = {tableCells} store = {store}/>)}
+            </tr>
+            <tr>
+              <td>sixth</td>
+                {timetable.map((tableCells)=>
+                <TimeTableRow tableCells = {tableCells} store = {store}/>)}
+            </tr>
           </tbody>
         </table>
 
