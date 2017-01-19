@@ -1,7 +1,7 @@
 const React = require('react')
 
 module.exports = function (props) {
-  console.log('tdetails-row.js', props );
+  // console.log('tdetails-row.js', props );
   const { details } = props
 
   // console.log('time-table-cell.js period: ', teacher);

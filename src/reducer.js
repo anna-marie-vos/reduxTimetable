@@ -16,10 +16,11 @@ const _ = require('lodash')
 
 
 module.exports = function (state, action) {
-
-  const newState = clone(state)
-
-  console.log("action in redcers.js", action)
+const { payload } = action
+// const {id, periodKey, dayKey} = payload
+  // const newState = clone(state)
+  // console.log(payload.id)
+  // console.log("action in redcers.js", action)
 
   switch (action.type) {
     case 'DISPLAY_DETAILS':
