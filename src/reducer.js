@@ -16,19 +16,18 @@ const _ = require('lodash')
 
 
 module.exports = function (state, action) {
-const { payload } = action
-// const {id, periodKey, dayKey} = payload
-  // const newState = clone(state)
-  // console.log(payload.id)
-  // console.log("action in redcers.js", action)
+  const newState = clone(state)
+  const { payload } = action
 
   switch (action.type) {
     case 'DISPLAY_DETAILS':
-      action.payload
+      newState.dayKey = action.payload.dayKey
+      newState.periodKey = action.payload.periodKey
+      return newState
 
     default:
       return newState
   }
 
-  return(newState)
+  return newState
 }
