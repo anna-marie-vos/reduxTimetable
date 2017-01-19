@@ -7,8 +7,11 @@ module.exports = function(db) {
   route.post("/", post);
 
   function get(req, res, next) {
-    res.json({ data: [ "my", "data" ] });
-    // db.get()
+
+    db.find('timetable')
+      .then((rows) => {
+        res.json({data: rows})
+      })
   }
 
   function post(req, res, next) {}
