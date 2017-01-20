@@ -22,8 +22,7 @@ const initialState = {
   ],
   periodKey: null,
   dayKey: null,
-  details: {id: 1, details:'history of the hobbit',
-    classroom:'102',teacher:'Jim Beam'}
+  details: {}
 }
 
 const store = createStore(reducer, initialState)

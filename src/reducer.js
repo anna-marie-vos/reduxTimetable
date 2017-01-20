@@ -23,6 +23,14 @@ module.exports = function (state, action) {
     case 'DISPLAY_DETAILS':
       newState.dayKey = action.payload.dayKey
       newState.periodKey = action.payload.periodKey
+
+      newState.details = newState.timetable.filter(timetableObj => {
+        console.log("this is action.id:", action.payload.id);
+        return timetableObj.id === action.payload.id
+      })[0]
+
+      console.log("newState.details here: ", newState.details);
+
       return newState
 
     default:
