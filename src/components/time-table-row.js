@@ -1,22 +1,22 @@
 const React = require('react')
 
 module.exports = function (props) {
-  // console.log('time-table-cell.js', props );
   const { tableCells, store, periodKey, dayKey } = props
   const { period, subject, details, classroom, teacher, id } = tableCells
-  // console.log('time-table-cell.js period: ', teacher);
+  console.log("periodKey in time-table-row", periodKey);
 
   return (
 
     <td>
-      <button onClick={() =>
-        store.dispatch(displayDetails(id,periodKey, dayKey))}>
+      <button onClick={ () =>
+        store.dispatch({
+          type: 'DISPLAY_DETAILS',
+          payload: {id, periodKey, dayKey}
+        })
+      }>
         {subject}
       </button>
     </td>
   )
-}
 
-function displayDetails (id, periodKey, dayKey) {
-  return {type: 'DISPLAY_DETAILS', payload: {id, periodKey, dayKey}}
 }
