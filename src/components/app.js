@@ -47,7 +47,7 @@ module.exports = function App (props) {
                   return(
                     <tr>
                       <td>{period}</td>
-                      {timetable.map((tableCells,index)=>
+                      {_.shuffle(timetable).map((tableCells,index)=>
                       <TimeTableRow tableCells = {tableCells}
                       periodKey={i+1} store = {store} dayKey ={index+1}/>)}
                     </tr>)
@@ -57,7 +57,6 @@ module.exports = function App (props) {
 
           </tbody>
         </table>
-
     </div>
   )
 }
