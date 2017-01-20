@@ -1,10 +1,7 @@
 const React = require('react')
 
 module.exports = function (props) {
-  // console.log('tdetails-row.js', props );
   const { details } = props
-
-  // console.log('time-table-cell.js period: ', teacher);
 
   return (
 
@@ -18,7 +15,3 @@ module.exports = function (props) {
     </tr>
   )
 }
-
-// function displayDetails (id) {
-//   return {type: 'DISPLAY_DETAILS', payload: id}
-// }
