@@ -34,6 +34,15 @@ module.exports = function App (props) {
                   return <DetailsRow details = {details} store = {store}/>
                 } else if (period === 'details' && i === 0) {
                   return
+                } else if (period === 'lunch') {
+                  return (
+                    <tr>
+                      <td>{period}</td>
+                      {timetable.map((tableCells,index)=>
+                      <td></td>
+                    )}
+                    </tr>
+                  )
                 } else {
                   return(
                     <tr>
