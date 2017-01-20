@@ -5,3 +5,15 @@ h1 {
 body{
   margin:3%;
 }
+
+ td{
+   width: 12vw;
+ }
+
+button {
+   width: 12vw;
+}
+
+th, td{
+  text-align: center;
+}
