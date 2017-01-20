@@ -13,6 +13,14 @@ module.exports = function App (props) {
   const periods = [1,2,3,'lunch', 4, 5]
   periods.splice(periodKey, 0, "details")
 
+  function random(timetable){
+    const randomIndex = Math.floor(Math.random() * timetable.length)
+    return randomSubject
+  }
+  const randomSubject = random(timetable)
+
+  console.log("This is a random subject", randomSubject);
+
   return (
     <div className="timetable">
       <h1>Timetable</h1>
@@ -47,7 +55,7 @@ module.exports = function App (props) {
                   return(
                     <tr>
                       <td>{period}</td>
-                      {timetable.map((tableCells,index)=>
+                      {randomSubject.map((tableCells,index)=>
                       <TimeTableRow tableCells = {tableCells}
                       periodKey={i+1} store = {store} dayKey ={index+1}/>)}
                     </tr>)

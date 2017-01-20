@@ -24,6 +24,8 @@ module.exports = function (state, action) {
       newState.timetable = action.payload.data
       return newState
 
+
+
     default:
       return newState
   }
