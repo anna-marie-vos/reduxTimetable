@@ -20,6 +20,10 @@ module.exports = function (state, action) {
 
       return newState
 
+    case 'UPDATE_TIMETABLE_STATE' :
+      newState.timetable = action.payload.data
+      return newState
+
     default:
       return newState
   }
