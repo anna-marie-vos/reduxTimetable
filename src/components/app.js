@@ -6,10 +6,12 @@ const DetailsRow = require('./details-row')
 const TimeTableRow = require('./time-table-row')
 
 module.exports = function App (props) {
-  // console.log('src/app.js props', props)
+
   const { store, state } = props
   const { timetable, details, periodKey, dayKey } = state
-  // console.log('src/app.js timetable', timetable)
+
+  const periods = [1,2,3,'lunch', 4, 5]
+  periods.splice(periodKey, 0, "details")
 
   return (
     <div className="timetable">
@@ -26,40 +28,23 @@ module.exports = function App (props) {
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>first</td>
-              {timetable.map((tableCells,index)=>
-                <TimeTableRow tableCells = {tableCells}
-                periodKey={1} store = {store} dayKey ={index+1}/>)}
-            </tr>
-            <DetailsRow details = {details} store = {store}/>
-            <tr>
-              <td>second</td>
-                {timetable.map((tableCells,index)=>
-                  <TimeTableRow tableCells = {tableCells}
-                  periodKey={2} store = {store} dayKey ={index+1}/>)}
-            </tr>
-            <tr>
-              <td>third</td>
-                {timetable.map((tableCells, index)=>
-                  <TimeTableRow tableCells = {tableCells}
-                  periodKey={3} store = {store} dayKey ={index+1}/>)}
-            </tr>
-            <tr>
-              <td>Lunch</td>
-            </tr>
-            <tr>
-              <td>fourth</td>
-                {timetable.map((tableCells, index)=>
-                  <TimeTableRow tableCells = {tableCells}
-                  periodKey={4} store = {store} dayKey ={index+1}/>)}
-            </tr>
-            <tr>
-              <td>fifth</td>
-                {timetable.map((tableCells, index)=>
-                  <TimeTableRow tableCells = {tableCells}
-                  periodKey={5} store = {store} dayKey ={index+1}/>)}
-            </tr>
+            {
+              periods.map((period, i) => {
+                if (period === 'details' && i != 0)  {
+                  return <DetailsRow details = {details} store = {store}/>
+                } else if (period === 'details' && i === 0) {
+                  return
+                } else {
+                  return(
+                    <tr>
+                      <td>{period}</td>
+                      {timetable.map((tableCells,index)=>
+                      <TimeTableRow tableCells = {tableCells}
+                      periodKey={i+1} store = {store} dayKey ={index+1}/>)}
+                    </tr>)
+                }
+              })
+            }
 
           </tbody>
         </table>
